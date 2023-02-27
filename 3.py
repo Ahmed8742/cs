@@ -1,3 +1,7 @@
+import telebot as tb
+import turtle as tr
+import random as rd
+from telebot import types 
 def turtle_3():
     sc = tr.Screen()
     cb = tr.Turtle()
