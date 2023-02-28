@@ -1,32 +1,34 @@
-import telebot as tb
-import turtle as tr
-import random as rd
-from telebot import types 
-Token = '6138040690:AAEDnK8ntamcKR0d4KZLfQwXWVO6YceEqc0'
-bot = tb.TeleBot(Token)
-@bot.message_handler(commands=['Design'])
-def turtle_1():
-    wn=tr.Screen()
-    wn.setup(600,600)
-    s=tr.Turtle()
+import turtle
+import random
+wn=turtle.Screen()
+wn.setup(600,600)
+wn.bgcolor("white")
+s=turtle.Turtle()
+r=10
 
-    r=10
-    for i in range(200):
-        s.circle(r+i,45)
-        j=rd.random()
-        k=rd.random()
-        l=rd.random()
-        s.pencolor((j,k,l))
+for i in range(20):
+    s.circle(r*i)
     s.penup()
-    s.home()
+    s.sety(r*i*-1)
+    s.setx(r*i*-1)
     s.pendown()
+    j=random.random()
+    k=random.random()
+    l=random.random()
+    s.pencolor((j,k,l))
+s.penup()
+s.home()
+s.pendown()
 
-    m=20
-    for i in range(200):
-        s.circle(m+i,45)
-        j=rd.random()
-        k=rd.random()
-        l=rd.random()
-        s.pencolor((j,k,l))
+for i in range(20):
+    s.circle(r*i)
     s.penup()
-    s.home()
+    s.setx(r*i)
+    s.sety(r*i*-1)
+    s.pendown()
+    j=random.random()
+    k=random.random()
+    l=random.random()
+    s.pencolor((j,k,l))
+s.hideturtle()
+turtle.done()
